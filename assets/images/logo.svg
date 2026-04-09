@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Shield Outline -->
+  <path d="M50 5 L15 20 V50 C15 70 30 85 50 95 C70 85 85 70 85 50 V20 Z" fill="none" stroke="#408A71" stroke-width="6" stroke-linejoin="round"/>
+  
+  <!-- Inner Shield Background (Dark) -->
+  <path d="M50 12 L22 25 V48 C22 64 34 76 50 84 C66 76 78 64 78 48 V25 Z" fill="#1B211A" stroke="#B0E4CC" stroke-width="1.5" stroke-linejoin="round"/>
+  
+  <!-- Terminal Prompt -->
+  <text x="50" y="58" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="32" font-weight="900" fill="#B0E4CC" text-anchor="middle">>_</text>
+</svg>

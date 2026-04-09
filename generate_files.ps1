@@ -14,6 +14,8 @@ function Get-Template {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShellCraft Academy - $($pageTitle)</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="$($depthStr)assets/images/logo.svg">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +30,7 @@ function Get-Template {
     <nav class="navbar navbar-expand-lg navbar-dark pb-3 pt-3">
         <div class="container">
             <a class="navbar-brand" href="$($depthStr)index.html">
-                <img src="$($depthStr)assets/images/logo.png" alt="ShellCraft Logo" width="40" height="40">
+                <img src="$($depthStr)assets/images/logo.svg" alt="ShellCraft Logo" width="40" height="40">
                 ShellCraft <span class="text-accent">>_</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -93,19 +95,20 @@ function Get-Template {
 
 $structure = [ordered]@{
     "Redes" = @("Fundamentos", "Routing", "Troubleshooting");
-    "Sistemas" = @("Fundamentos de Linux", "Fundamentos de Windows", "Personalizacion de Entornos Linux");
-    "Bases de Datos" = @("Introduccion a las Bases de Datos", "SQL", "No SQL");
-    "Programacion" = @("Python", "C_C++_C");
-    "Servicios" = @("DNS", "SSH", "FTP", "DHCP", "CORREO", "HTTP_HTTPS");
-    "Implementacion Web" = @("HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Conexion con Bases de Datos");
-    "Ciberseguridad" = @("Introduccion a la ciberseguridad", "Introduccion al hacking etico", "Especializacion en Pentesting Web", "Especializacion en Pentesting en Active Directory", "Especializacion en Pentesting en Android_IOs")
+    "Sistemas" = @("Fundamentos de Linux", "Fundamentos de Windows", "Personalización de Entornos Linux");
+    "Bases de Datos" = @("Introducción a las Bases de Datos", "SQL", "No SQL");
+    "Programación" = @("Python", "C/C++/C#");
+    "Servicios" = @("DNS", "SSH", "FTP", "DHCP", "CORREO (POP, SMTP, IMAP)", "HTTP/HTTPS");
+    "Implementación Web" = @("HTML", "CSS", "JavaScript", "Bootstrap", "PHP", "Conexión con Bases de Datos");
+    "Ciberseguridad" = @("Introducción a la ciberseguridad", "Introducción al hacking ético", "Especialización en Pentesting Web", "Especialización en Pentesting en Active Directory", "Especialización en Pentesting en Android/IOs")
 }
 
+Remove-Item -Recurse -Force "$basePath\pages" -ErrorAction SilentlyContinue
 New-Item -ItemType Directory -Force -Path "$basePath\pages" | Out-Null
 
 foreach ($module in $structure.Keys) {
     # Replace spaces with hyphens and convert to lowercase for folder names
-    $folderName = $module -replace " ", "-" -replace "ó", "o" -replace "í", "i" -replace "á", "a" -replace "é", "e" -replace "ú", "u"
+    $folderName = $module -replace " ", "-" -replace "ó", "o" -replace "í", "i" -replace "á", "a" -replace "é", "e" -replace "ú", "u" -replace "ñ", "n"
     $folderName = $folderName.ToLower()
     $modulePath = "$basePath\pages\$folderName"
     
@@ -113,7 +116,7 @@ foreach ($module in $structure.Keys) {
     
     foreach ($pageContent in $structure[$module]) {
         # Format filename
-        $fileName = $pageContent -replace " ", "-" -replace "ó", "o" -replace "í", "i" -replace "á", "a" -replace "é", "e" -replace "ú", "u" -replace "/", "_" -replace "\+", "p" -replace "\#", "sharp" -replace "\*", "star"
+        $fileName = $pageContent -replace " ", "-" -replace "ó", "o" -replace "í", "i" -replace "á", "a" -replace "é", "e" -replace "ú", "u" -replace "ñ", "n" -replace "/", "_" -replace "\+", "p" -replace "\#", "sharp" -replace "\*", "star" -replace "\(|\)|,", ""
         $fileName = $fileName.ToLower() + ".html"
         $filePath = "$modulePath\$fileName"
         
