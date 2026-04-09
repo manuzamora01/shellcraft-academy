@@ -201,3 +201,44 @@ footer {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+/* =========================================
+   UI KIT - COMPONENTES DEL CURSO
+   ========================================= */
+
+/* Caja de código / Apuntes */
+.code-block {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 15px;
+    color: #e6edf3;
+    font-family: 'JetBrains Mono', monospace;
+    overflow-x: auto;
+}
+
+/* Tarjeta de Misión / Ejercicio */
+.mission-card {
+    border-left: 4px solid var(--color-yellow, #ffc107);
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* Sandbox UI */
+.sandbox-editor {
+    background-color: #0d1117;
+    color: var(--color-primary-light, #2ea043);
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid #30363d;
+    resize: vertical;
+}
+.sandbox-editor:focus {
+    background-color: #0d1117;
+    color: #2ea043;
+    box-shadow: 0 0 0 0.25rem rgba(46, 160, 67, 0.25);
+    border-color: #2ea043;
+}
+.sandbox-output {
+    background-color: #010409;
+    border: 1px solid #30363d;
+    min-height: 150px;
+}
