@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShellCraft Academy - Introduccion a la ciberseguridad</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark pb-3 pt-3">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../assets/images/logo.png" alt="ShellCraft Logo" width="40" height="40">
+                ShellCraft <span class="text-accent">>_</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-3">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Ciberseguridad</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Header -->
+    <header class="hero-section text-center py-5 mb-5" style="padding: 60px 0; background-image: none; background-color: var(--color-base-alt); border-bottom: 2px solid var(--color-primary-light);">
+        <div class="container">
+            <h1 class="hero-title display-5">Introduccion a la ciberseguridad</h1>
+            <p class="hero-subtitle mb-0">MÃ³dulo de Ciberseguridad</p>
+        </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="container mb-5 flex-grow-1">
+        <div class="row">
+            <div class="col-lg-8 mx-auto terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot dot-red"></div>
+                    <div class="terminal-dot dot-yellow"></div>
+                    <div class="terminal-dot dot-green"></div>
+                </div>
+                <div class="terminal-body text-start">
+                    <p><span class="prompt">guest@shellcraft:~$</span> <span class="command">cat descripcion.txt</span></p>
+                    <p class="text-accent mt-3">
+                        Bienvenido a la secciÃ³n de <strong>Introduccion a la ciberseguridad</strong>.<br><br>
+                        Todo el contenido asociado a este nivel se detallarÃ¡ prÃ³ximamente. Prepara tu entorno para iniciar tu entrenamiento especializado.
+                    </p>
+                    <p><span class="prompt">guest@shellcraft:~$</span> <span class="command" style="animation: blink 1s step-end infinite;">_</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+             <a href="../../index.html" class="btn btn-terminal">cd .. (Volver)</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center mt-auto">
+        <div class="container">
+            <p class="mb-0 text-accent">Â© 2026 ShellCraft Academy. Forjado en la terminal.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase Config -->
+    <script type="module" src="../../assets/js/firebase-config.js"></script>
+</body>
+</html>

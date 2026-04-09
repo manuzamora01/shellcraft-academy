@@ -1,0 +1,181 @@
+:root {
+  /* Paleta Principal */
+  --color-base-dark: #091413;
+  --color-base-alt: #1B211A;
+  --color-primary: #285A48;
+  --color-primary-light: #408A71;
+  --color-accent: #B0E4CC;
+  --color-accent-alt: #8BAE66;
+  --color-text-yellow: #EBD5AB;
+  
+  --font-terminal: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--color-base-dark);
+  color: var(--color-accent);
+  font-family: var(--font-terminal);
+  line-height: 1.6;
+}
+
+/* Tipografía de encabezados */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-yellow);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Navbar Personalizado */
+.navbar {
+  background-color: var(--color-base-alt) !important;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+.navbar-brand {
+  color: var(--color-text-yellow) !important;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-link {
+  color: var(--color-accent) !important;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link:hover, .nav-link:focus, .nav-link.active {
+  color: var(--color-text-yellow) !important;
+  text-shadow: 0 0 5px var(--color-text-yellow);
+}
+
+/* Botones estilo Terminal */
+.btn-terminal {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-primary-light);
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-terminal:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-base-dark);
+  box-shadow: 0 0 15px var(--color-primary-light);
+}
+
+.btn-terminal::before {
+  content: ">_ ";
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-terminal:hover::before {
+  opacity: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 100px 0;
+  position: relative;
+  background-image: linear-gradient(to right, rgba(9, 20, 19, 0.9), rgba(27, 33, 26, 0.8)), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  text-shadow: 0 0 10px rgba(235, 213, 171, 0.5);
+}
+
+.hero-subtitle {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Tarjetas de Cursos */
+.card-course {
+  background-color: var(--color-base-alt);
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(64, 138, 113, 0.4);
+  border-color: var(--color-primary-light);
+}
+
+.card-course .card-title {
+  color: var(--color-text-yellow);
+  border-bottom: 1px dashed var(--color-primary-light);
+  padding-bottom: 10px;
+}
+
+.card-course .card-body {
+  padding: 2rem;
+}
+
+.card-course ul {
+  padding-left: 1.2rem;
+}
+
+/* Terminal Window Effect */
+.terminal-window {
+  background-color: #000;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+  background-color: #333;
+  padding: 5px 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-body {
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+.prompt {
+  color: var(--color-accent-alt);
+}
+.command {
+  color: var(--color-text-yellow);
+}
+
+/* Utilidades adicionales */
+.text-accent { color: var(--color-accent) !important; }
+.text-yellow { color: var(--color-text-yellow) !important; }
+.bg-dark-base { background-color: var(--color-base-dark) !important; }
+.border-primary-light { border-color: var(--color-primary-light) !important; }
+
+/* Footers y Separadores */
+footer {
+  border-top: 1px dashed var(--color-primary);
+  background-color: var(--color-base-alt);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
