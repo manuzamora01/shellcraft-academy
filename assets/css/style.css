@@ -179,3 +179,25 @@ footer {
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+/* =========================================
+   ESTILOS DE MÓDULOS Y COMPONENTES
+   ========================================= */
+
+/* Header para las páginas interiores de los módulos */
+.header-module {
+    padding: 60px 0;
+    background-image: none;
+    background-color: var(--color-base-alt, #0d1117); /* Ajusta a tu variable real */
+    border-bottom: 2px solid var(--color-primary-light, #2ea043); /* Ajusta a tu variable real */
+}
+
+/* Animación del cursor de la terminal */
+.blink-cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
