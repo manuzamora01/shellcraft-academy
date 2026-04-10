@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ShellCraft Academy - Python: Control de Flujo</title>
+    <meta name="description" content="Aprende a tomar decisiones y automatizar procesos repetitivos con if, else, for y while en Python.">
+    
+    <link rel="icon" type="image/svg+xml" href="../../../assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-base">
+    
+    <div id="navbar-placeholder"></div>
+
+    <header class="hero-section text-center py-5 mb-5 header-module">
+        <div class="container">
+            <h1 class="hero-title display-5">02. Control de Flujo</h1>
+            <p class="hero-subtitle mb-0">Condicionales (If/Else) y Bucles (For/While) en Python</p>
+        </div>
+    </header>
+
+    <main class="container mb-5 flex-grow-1">
+
+        <div class="card bg-dark border-secondary mb-5">
+            <div class="card-body p-4">
+                <h3 class="text-accent mb-3"><span class="text-white">#</span> Briefing del Módulo</h3>
+                <p class="text-light mb-0">
+                    Un script lineal es predecible y limitado. Para crear herramientas potentes (como un escáner de red, un ataque de diccionario o un script de respuesta a incidentes), necesitas que tu código tome decisiones basadas en los datos que recibe y que repita tareas dinámicamente.
+                </p>
+                <hr class="border-secondary my-4">
+                <h5 class="text-white mb-3">Objetivos principales:</h5>
+                <ul class="text-accent list-unstyled mb-0">
+                    <li><span class="text-yellow">[*]</span> Tomar decisiones lógicas con <code>if</code>, <code>elif</code> y <code>else</code>.</li>
+                    <li><span class="text-yellow">[*]</span> Iterar sobre colecciones estáticas con bucles <code>for</code>.</li>
+                    <li><span class="text-yellow">[*]</span> Ejecutar tareas condicionadas y continuas con bucles <code>while</code>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="theory-section mb-5">
+            <h2 class="h4 text-white mb-3">1. Condicionales (if / elif / else)</h2>
+            <p class="text-light">
+                Usamos <code>if</code> para evaluar si una condición es verdadera (True). Si lo es, se ejecuta el bloque indentado. Si es falsa (False), podemos usar <code>else</code> para ejecutar otra acción, o <code>elif</code> para probar una condición alternativa.
+            </p>
+            <div class="code-block my-3">
+                puerto = <span class="text-info">22</span><br><br>
+                <span class="text-yellow">if</span> puerto == <span class="text-info">22</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">"[+] Posible servicio SSH detectado."</span>)<br>
+                <span class="text-yellow">elif</span> puerto == <span class="text-info">80</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">"[+] Posible servicio HTTP detectado."</span>)<br>
+                <span class="text-yellow">else</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">"[-] Puerto desconocido."</span>)
+            </div>
+            
+            <h2 class="h4 text-white mb-3 mt-5">2. Bucles FOR (Automatización definida)</h2>
+            <p class="text-light">
+                El bucle <code>for</code> es ideal cuando sabes exactamente cuántas veces quieres repetir algo. Por ejemplo, recorrer un rango del 1 al 3 usando <code>range(1, 4)</code>.
+            </p>
+            <div class="code-block my-3">
+                <span class="text-yellow">for</span> puerto <span class="text-yellow">in</span> <span class="text-info">range</span>(1, 4):<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">f"Escaneando puerto {puerto}..."</span>)
+            </div>
+
+            <h2 class="h4 text-white mb-3 mt-5">3. Bucles WHILE (Ejecución condicional)</h2>
+            <p class="text-light">
+                El bucle <code>while</code> se ejecuta continuamente <strong>mientras</strong> una condición siga siendo verdadera. Es muy útil para realizar reintentos o mantener un script "escuchando" indefinidamente. ¡Debes asegurarte de modificar la variable de control dentro del bucle para no crear un bucle infinito que cuelgue el sistema!
+            </p>
+            <div class="code-block my-3">
+                intentos = <span class="text-info">0</span><br><br>
+                <span class="text-yellow">while</span> intentos < <span class="text-info">3</span>:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">f"Reintentando conexión... Intento {intentos + 1}"</span>)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;intentos += <span class="text-info">1</span> <span class="text-secondary"># Aumentamos el contador en 1 en cada vuelta</span>
+            </div>
+
+            <div class="alert alert-dark border-primary-light text-light mt-4" role="alert">
+                <strong>💡 Pro-Tip:</strong> En Python la indentación (los espacios a la izquierda) no es estética, es obligatoria. Un bloque mal indentado arrojará un error fatal de sintaxis.
+            </div>
+        </section>
+
+        <h3 class="h4 text-white mb-3">~ Laboratorio de Pruebas</h4>
+        <p class="text-light mb-4">Combina la lógica de <code>while</code> e <code>if</code> antes de enfrentarte a la misión final.</p>
+        <div class="card bg-dark border-secondary mb-5">
+            <div class="card-body p-0 rounded overflow-hidden">
+                <div class="bg-dark text-secondary px-3 py-2 border-bottom border-secondary small d-flex justify-content-between align-items-center">
+                    <span><span class="text-yellow">⚙️</span> Terminal Remota (Python 3)</span>
+                </div>
+                <iframe src="https://onecompiler.com/embed/python" width="100%" height="500px" frameborder="0" style="border: none; display: block;"></iframe>
+            </div>
+        </div>
+
+        <div class="card mission-card mb-5">
+            <div class="card-body p-4">
+                <h4 class="text-yellow mb-3">🎯 Misión 02: Defensa contra Fuerza Bruta</h4>
+                <p class="text-light mb-4">
+                    Escribe un script en el Sandbox que simule un sistema de login defensivo combinando un bucle <code>while</code> y un condicional <code>if/else</code>.<br><br>
+                    <strong>Reglas:</strong><br>
+                    1. Inicia una variable <code>intentos = 1</code>.<br>
+                    2. Crea un bucle <code>while</code> que se ejecute mientras los intentos sean menores o iguales a 3.<br>
+                    3. Dentro del bucle, usa un <code>if</code>: si los intentos llegan exactamente a 3, imprime <em>"[!] ALERTA CRÍTICA: Bloqueando IP por demasiados intentos."</em><br>
+                    4. Si no (usando <code>else</code>), imprime <em>"[-] Contraseña incorrecta. Intento X"</em> (donde X es el número del intento).<br>
+                    5. ¡No olvides sumar 1 a la variable intentos en cada vuelta para salir del bucle!
+                </p>
+                
+                <button class="btn btn-outline-success btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#target-solucion-01">
+                    >_ Desencriptar Solución
+                </button>
+
+                <div class="collapse mt-3" id="target-solucion-01">
+                    <div class="card card-body bg-dark border-success text-light">
+                        <p class="mb-2">Esta es la estructura clásica de un sistema de bloqueo por intentos:</p>
+                        <div class="code-block">
+                            intentos = <span class="text-info">1</span><br><br>
+                            <span class="text-yellow">while</span> intentos <= <span class="text-info">3</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">if</span> intentos == <span class="text-info">3</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">"[!] ALERTA CRÍTICA: Bloqueando IP por demasiados intentos."</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">else</span>:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">f"[-] Contraseña incorrecta. Intento {intentos}"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;intentos += <span class="text-info">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+             <a href="../python.html" class="btn btn-terminal">cd .. (Volver a la Ruta de Python)</a>
+        </div>
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../../../assets/js/layout.js" id="layout-script" data-basepath="../../../"></script>
+    
+</body>
+</html>
