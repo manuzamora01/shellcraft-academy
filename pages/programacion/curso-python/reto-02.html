@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShellCraft Academy - Reto 02: Filtrado de Logs</title>
+    <link rel="icon" type="image/svg+xml" href="../../../assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-base">
+    
+    <div id="navbar-placeholder"></div>
+
+    <header class="hero-section text-center py-5 mb-5 header-module" style="border-bottom-color: var(--color-yellow);">
+        <div class="container">
+            <span class="badge bg-warning text-dark mb-2">Nivel 2: SysAdmin</span>
+            <h1 class="hero-title display-5">Operación: Filtrado de Logs</h1>
+        </div>
+    </header>
+
+    <main class="container mb-5 flex-grow-1">
+
+        <div class="card mission-card border-warning mb-5" style="background-color: rgba(255, 193, 7, 0.05);">
+            <div class="card-body p-4">
+                <h3 class="text-yellow mb-3">📄 Briefing de la Misión</h3>
+                <p class="text-light mb-4">
+                    Hemos exportado un archivo de registro del servidor firewall. Hay cientos de conexiones, pero solo nos importan las que fallaron. Escribe un script para automatizar la auditoría.
+                </p>
+                <h5 class="text-white mb-2">Instrucciones:</h5>
+                <ul class="text-accent mb-4">
+                    <li>Primero, usa el Sandbox para crear un archivo llamado <code>firewall.log</code> y escribe en él varias líneas (ej: "Conexion OK de 192.168.1.5", "ERROR: Intento fallido de 10.0.0.9", "Conexion OK de 172.16.0.1").</li>
+                    <li>Vuelve a abrir el archivo en modo lectura (<code>"r"</code>).</li>
+                    <li>Recorre el archivo usando un bucle <code>for linea in archivo:</code>.</li>
+                    <li>Usa un <code>if</code> para comprobar si la palabra <strong>"ERROR"</strong> está dentro de la línea. Si está, imprímela.</li>
+                </ul>
+                
+                <button class="btn btn-outline-warning btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#target-solucion-02">
+                    >_ Desencriptar Solución
+                </button>
+
+                <div class="collapse mt-3" id="target-solucion-02">
+                    <div class="card card-body bg-dark border-warning text-light">
+                        <div class="code-block">
+                            <span class="text-secondary"># 1. Creamos el archivo de prueba simulando el entorno</span><br>
+                            <span class="text-yellow">with open</span>(<span class="text-success">"firewall.log"</span>, <span class="text-success">"w"</span>) <span class="text-yellow">as</span> f:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;f.write(<span class="text-success">"Conexion OK - IP: 192.168.1.1\n"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;f.write(<span class="text-success">"ERROR: Credenciales invalidas - IP: 10.0.0.5\n"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;f.write(<span class="text-success">"Conexion OK - IP: 192.168.1.2\n"</span>)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;f.write(<span class="text-success">"ERROR: Intento de inyeccion SQL - IP: 10.0.0.9\n"</span>)<br><br>
+
+                            <span class="text-secondary"># 2. Leemos y filtramos</span><br>
+                            <span class="text-yellow">print</span>(<span class="text-success">"[!] Iniciando auditoría de logs...\n"</span>)<br>
+                            <span class="text-yellow">with open</span>(<span class="text-success">"firewall.log"</span>, <span class="text-success">"r"</span>) <span class="text-yellow">as</span> log:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">for</span> linea <span class="text-yellow">in</span> log:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">if</span> <span class="text-success">"ERROR"</span> <span class="text-yellow">in</span> linea:<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">print</span>(<span class="text-success">f"ALERTA ENCONTRADA: {linea.strip()}"</span>) <span class="text-secondary"># .strip() quita saltos de linea extra</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card bg-dark border-secondary mb-5">
+            <div class="card-body p-0 rounded overflow-hidden">
+                <div class="bg-dark text-secondary px-3 py-2 border-bottom border-secondary small d-flex justify-content-between align-items-center">
+                    <span><span class="text-yellow">⚙️</span> Terminal Segura</span>
+                </div>
+                <iframe src="https://onecompiler.com/embed/python" width="100%" height="500px" frameborder="0" style="border: none; display: block;"></iframe>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+             <a href="laboratorio.html" class="btn btn-terminal">cd .. (Volver al Cyber Range)</a>
+        </div>
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/layout.js" id="layout-script" data-basepath="../../../"></script>
+</body>
+</html>
