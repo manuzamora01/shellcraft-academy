@@ -1,0 +1,50 @@
+Tengo un proyecto de una academia hosteada en GitHub (GitHub.io). La academia se titula ShellCraft Academy y está especializada en distintas áreas de la informática. La estructura base de contenido es la siguiente:
+
+- index.html
+|- Redes
+|	|- Fundamentos
+|	|- Routing
+|	|- Troubleshooting
+|- Sistemas
+|	|- Fundamentos de Linux
+|	|- Fundamentos de Windows
+|	|- Personalización de Entornos Linux
+|- Bases de Datos
+|	|- Introducción a las Bases de Datos
+|	|- SQL
+|	|- No SQL
+|- Programación
+|	|- Python
+|	|- C/C++/C*
+|- Servicios
+|	|- DNS
+|	|- SSH
+|	|- FTP
+|	|- DHCP
+|	|- CORREO (POP, SMTP, IMAP)
+|	|- HTTP/HTTPS
+|- Implementación Web
+|	|- HTML
+|	|- CSS
+|	|- JavaScript
+|	|- Bootstrap
+|	|- PHP
+|	|- Conexión con Bases de Datos
+|- Ciberseguridad
+|	|- Introducción a la ciberseguridad
+|	|- Introducción al hacking ético
+|	|- Especialización en Pentesting Web
+|	|- Especialización en Pentesting en Active Directory
+|	|- Especialización en Pentesting en Android/IOs
+
+Tareas a realizar:
+- Necesito que crees una página web completa en base a las siguientes tecnologías:
+	- HTML, CSS, Bootstrap, JavaScript
+	- Para la base de datos, vamos a usar Firebase
+- Genera las imágenes que creas conveniente para mejorar la estética de la academia
+- Utiliza una fuente de letra parecida a la de un terminal
+- Las paletas de colores que quiero que uses son:
+	- #091413 #285A48 #408A71 #B0E4CC
+	- #1B211A #628141 #8BAE66 #EBD5AB
+- Crea los directorios y archivos que consideres necesarios para estructurar bien el contenido
+- Añade comentarios en el código siempre que sea necesario para saber que hace cada cosa
